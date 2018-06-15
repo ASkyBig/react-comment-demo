@@ -22,9 +22,16 @@ export default class Comment extends Component {
 		const comment = this.props.comment
 		const duration = (+Date.now() - comment.createdTime) / 1000
 		this.setState({
-			timeString: duration > 60 
-				? `${Math.round(duration /60)} 分钟前`
-				: `${Math.round(Math.max(duration, 1))} 秒前`
+// 			timeString: duration > 60 
+// 				? `${Math.round(duration /60)} 分钟前`
+// 				: `${Math.round(Math.max(duration, 1))} 秒前`
+			timeString: duration > 86400
+				?  `${Math.round(duration / 86400)} 天前`
+				: duration > 3600 
+					? `${Math.round(duration / 3600)} 小时前`
+					: duration > 60 
+						? `${Math.round(duration/60)} 分钟前`
+						: `${Math.round(Math.max(duration, 1))} 秒前` 
 		})
 	}
 
