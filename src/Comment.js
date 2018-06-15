@@ -4,7 +4,7 @@ export default class Comment extends Component {
 	
 	constructor () {
 		super()
-		this.state = {timeStirng: ''}
+		this.state = {timeString: ''}
 	}
 
 	componentWillMount () {
